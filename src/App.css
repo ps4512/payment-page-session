@@ -1,0 +1,7 @@
+.success-page h1 {
+  color: #4caf50;
+}
+
+.failure-page h1 {
+  color: #f44336;
+}
