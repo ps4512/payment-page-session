@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { AdyenCheckout, Dropin, Card, PayPal } from '@adyen/adyen-web';
+import { AdyenCheckout, Dropin, Card, GooglePay } from '@adyen/adyen-web';
 import '@adyen/adyen-web/styles/adyen.css';
-
 
 const Checkout = () => {
 
@@ -40,13 +39,14 @@ const Checkout = () => {
         },
         environment: 'test', // Change to 'live' for the live environment.
         amount: {
-          value: 1000,
+          value: 6,
           currency: 'EUR'
         },
-        locale: 'nl-NL',
+        locale: 'zh-CN',
         countryCode: 'NL',
-        clientKey: 'test_HYAHXGJMHRBMVP3MBLIZEZ4UFA6KRRPW', // Public key used for client-side authentication: https://docs.adyen.com/development-resources/client-side-authentication
+        clientKey: 'test_3HRWKFYEJJHPLDBBXR7UDOU4HYVQCGYZ', // Public key used for client-side authentication: https://docs.adyen.com/development-resources/client-side-authentication
         onPaymentCompleted: (result, component) => {
+      
           console.info(result, component);
         },
         onPaymentFailed: (result, component) => {
@@ -65,7 +65,7 @@ const Checkout = () => {
           // Create an instance of Drop-in.
           const dropin = new Dropin(checkout, {
           // Include the payment methods that imported.
-          paymentMethodComponents: [Card, PayPal],
+          paymentMethodComponents: [Card, GooglePay],
           // Mount it to the container you created.
           }).mount(dropinContainer);        
         } 
