@@ -38,41 +38,41 @@ const Checkout = () => {
           storedCard:{
             hideCVC: false,
           },
+
           card: {
-            //hasHolderName: true,
-            //holderNameRequired: true,
-            name: "Credit or debit card, trusted by oracle cloud payment system",
             styles: {
               base: {
-                color: 'black',
-                fontSize: '16px',
-                fontSmoothing: 'antialiased',
-                fontFamily: 'Helvetica'
+                //color: '#fff',
+                //background: '#141414',
               },
               error: {
-                color: 'green'
+                //color: '#fff',
               },
-              placeholder: {
-                color: '#d8d8d8'
-              },
-              validated: {
-                color: 'green'
-              }
-            }
+            },
+          
+            hasHolderName: true,
+            //holderNameRequired: true,
+            //billingAddressRequired: true,
+            name: "Credit or debit card",
           },
         },
         session: {
           id: sessionId, // Unique identifier for the payment session.
           sessionData: sessionData // The payment session data.
         },
-        environment: 'test', // Change to 'live' for the live environment.
+        environment: 'live', // Change to 'live' for the live environment.
         amount: {
-          value: 100,
-          currency: 'USD'
+          value: 1000,
+          currency: 'EUR'
         },
-        locale: 'en-US',
-        countryCode: 'US',
-        clientKey: 'test_HYAHXGJMHRBMVP3MBLIZEZ4UFA6KRRPW', // Public key used for client-side authentication: https://docs.adyen.com/development-resources/client-side-authentication
+        locale: 'cn',
+        translations: {
+          //"th-TH": {
+            //"payButton": "จ่าย"
+          //}
+        },
+        countryCode: 'BE',
+        clientKey: 'live_3BIWDIIZQNEIZALPX2AKM3Z6OAO56HUB', // Public key used for client-side authentication: https://docs.adyen.com/development-resources/client-side-authentication
         onPaymentCompleted: (result, component) => {
           console.log("completed")
           console.log(sessionId);
@@ -106,27 +106,10 @@ const Checkout = () => {
                 hideCVC: true
             },
             card: {
-              //hasHolderName: true,
+              hasHolderName: true,
               //holderNameRequired: true,
-              name: "Credit or debit card, trusted by oracle cloud payment system",
-              styles: {
-                base: {
-                  color: 'black',
-                  //background: "black",
-                  fontSize: '16px',
-                  fontSmoothing: 'antialiased',
-                  fontFamily: 'Helvetica'
-                },
-                error: {
-                  color: 'green'
-                },
-                placeholder: {
-                  color: '#d8d8d8'
-                },
-                validated: {
-                  color: 'green'
-                }
-              }
+              //billingAddressRequired: true,
+              name: "Credit or debit card",
             },
         }
           }).mount(dropinContainer);        

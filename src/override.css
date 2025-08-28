@@ -1,3 +1,97 @@
+/* https://github.com/Adyen/adyen-web?tab=readme-ov-file#localization */
+
 :root {
-    --adyen-sdk-color-background-primary: #090915;
+    --adyen-sdk-color-background-primary: #141414;
+    --adyen-sdk-color-background-secondary: #292929;
+    --adyen-sdk-color-label-primary: rgba(255, 255, 255, 0.7);
+    --adyen-sdk-color-separator-primary: rgba(255, 255, 255, 0.9);
+    /**边框**/
+    --adyen-sdk-color-outline-primary: rgba(255, 255, 255, 0.15);
+    --adyen-sdk-color-outline-tertiary: rgba(255, 255, 255, 0.15);
+    --adyen-sdk-color-outline-primary-active: rgba(255, 255, 255, 0.9);
+  
+    /** 外边框 **/
+    --adyen-sdk-color-outline-secondary: rgba(255, 255, 255, 0);
+  
+    --adyen-sdk-color-label-critical: #e52e2e;
+  
+    /* --adyen-sdk-color-outline-primary-hover: rgba(255,255,255,0); */
+  
+    /** 按钮背景色 **/
+    --adyen-sdk-color-background-always-dark: #e52e2e;
+    --adyen-sdk-color-background-inverse-primary-hover: #e52e2e;
+    --adyen-sdk-color-background-always-dark-active: #e52e2e;
+  
+    --adyen-sdk-color-background-secondary-active: #e52e2e;
+  
+    --adyen-sdk-color-label-disabled: rgba(229, 46, 46, 0.3);
+  
+    --adyen-sdk-color-background-disabled: #292929;
+    --adyen-sdk-color-label-secondary: rgba(255, 255, 255, 0.3);
+  
+    --adyen-sdk-spacer-120: 40px;
+    --adyen-sdk-border-radius-m: 4px;
+  
+    /* --adyen-sdk-spacer-020: 4px;
+    --adyen-sdk-text-body-font-size: 12px;
+    --adyen-sdk-text-caption-font-size: 12px; */
+  
+    /* input 高度 */
+    /* --adyen-sdk-spacer-110: 40px; */
+    @media screen and (min-width: 1024px) {
+      /* 大屏幕下的样式 */
+      /* --adyen-sdk-text-caption-font-size: 1rem; */
+    }
   }
+  .stored-card .adyen-checkout-form-instruction {
+    display: none;
+  }
+  .adyen-checkout__payment-method {
+    border-radius: 4px !important;
+    border: 0 !important;
+  }
+  .adyen-checkout__field--inactive > .adyen-checkout__input-wrapper {
+    border-color: rgba(255, 255, 255, 0.15) !important;
+  }
+  
+  .adyen-checkout__field--valid .adyen-checkout__card__cardNumber__brandIcon {
+    opacity: 1;
+  }
+  .adyen-checkout__card__cardNumber__brandIcon {
+    /* display: none; */
+    opacity: 0.5;
+  }
+  .adyen-checkout__field__exp-date_hint {
+    opacity: 0.5;
+  }
+  .adyen-checkout__card__cvc__hint--front {
+    opacity: 0.5;
+  }
+  .adyen-checkout__card__cvc__hint--back {
+    opacity: 0.5;
+  }
+  .adyen-checkout__button__icon {
+    display: none;
+  }
+  
+  /* .adyen-checkout__input-wrapper .adyen-checkout__input{
+    height: 40px;
+  } */
+  
+  /* .adyen-checkout__card__cvc__hint {
+    width: 30px;
+    height: 20px;
+  } */
+  
+  .adyen-checkout__store-details {
+    background-color: transparent !important;
+    border: 0 !important;
+    padding: 0 2px !important;
+  }
+  .adyen-checkout__store-details ::after {
+    top: 2px !important;
+  }
+  .adyen-checkout__store-details ::before {
+    top: 4px !important;
+  }
+  
