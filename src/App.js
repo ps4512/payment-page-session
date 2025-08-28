@@ -63,7 +63,7 @@ const Checkout = () => {
         environment: 'live', // Change to 'live' for the live environment.
         amount: {
           value: 1000,
-          currency: 'EUR'
+          currency: 'THB'
         },
         locale: 'cn',
         translations: {
@@ -71,7 +71,7 @@ const Checkout = () => {
             //"payButton": "จ่าย"
           //}
         },
-        countryCode: 'BE',
+       // countryCode: 'TH',
         clientKey: 'live_3BIWDIIZQNEIZALPX2AKM3Z6OAO56HUB', // Public key used for client-side authentication: https://docs.adyen.com/development-resources/client-side-authentication
         onPaymentCompleted: (result, component) => {
           console.log("completed")
