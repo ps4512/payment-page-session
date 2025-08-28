@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { AdyenCheckout, Dropin, Card, GooglePay } from '@adyen/adyen-web';
+import { AdyenCheckout, Dropin, Card, GooglePay,PromptPay } from '@adyen/adyen-web';
 import '@adyen/adyen-web/styles/adyen.css';
 import './override.css';
 
@@ -96,7 +96,7 @@ const Checkout = () => {
           // Create an instance of Drop-in.
           const dropin = new Dropin(checkout, {
           // Include the payment methods that imported.
-          paymentMethodComponents: [Card, GooglePay],
+          paymentMethodComponents: [Card, GooglePay, PromptPay],
           onReady() {
             console.log("Component is ready to interact with the shopper")
           },
